@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tango International Services - Expertise Maritime</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a4b8c;
+            --secondary-color: #0a2d5e;
+            --accent-color: #4a90e2;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --gray-color: #6c757d;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.1s ease;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f0f5ff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-image {
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-image img {
+            height:100%;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            margin-left: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+        
+        .logo-text .subtitle {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            font-weight: 500;
+            margin-top: 3px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 45, 94, 0.8), rgba(10, 45, 94, 0.9)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Section commune */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+        
+        .section-title p {
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* Page Accueil */
+        .services-home {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            background-color: var(--primary-color);
+            color: white;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .about-home {
+            background-color: #f0f5ff;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Page Services */
+        .service-detail {
+            margin-bottom: 60px;
+        }
+        
+        .service-detail h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-detail h3 i {
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+        
+        .service-detail ul {
+            list-style-position: inside;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .service-detail ul li {
+            margin-bottom: 10px;
+        }
+        
+        /* Page À propos */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .mission, .vision {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .mission h3, .vision h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .team {
+            background-color: white;
+            padding: 60px 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .team-member h4 {
+            color: var(--primary-color);
+            margin: 15px 0 5px;
+            font-size: 1.5rem;
+        }
+        
+        .team-member p {
+            color: var(--gray-color);
+            font-style: italic;
+        }
+        
+        .member-icon {
+            font-size: 4rem;
+            color: var(--accent-color);
+        }
+        
+        /* Page Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 30px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo img {
+            height: 100%;
+            width: auto;
+            
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Page Content */
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .logo-image {
+                height: 50px;
+            }
+            
+            .logo-text {
+                margin-left: 10px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text .subtitle {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 10px 0;
+            }
+            
+            .logo-image {
+                height: 45px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo nav-link" data-page="accueil">
+                <div class="logo-image">
+                    <!-- Logo T.I.S -->
+                    <img src="/assets/img/logo_tis.jpeg">
+                </div>
+                <div class="logo-text">
+                    <h1>Tango International Services</h1>
+                    <div class="subtitle">Expertise Maritime • Shipping • Pêche</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="accueil">Accueil</a></li>
+                    <li><a href="#" class="nav-link" data-page="services">Nos Services</a></li>
+                    <li><a href="#" class="nav-link" data-page="apropos">À Propos</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Accueil -->
+    <section id="accueil" class="page-content active">
+        <div class="hero">
+            <div class="container">
+                <h2>Expertise Maritime - Shipping - Pêche</h2>
+                <p>Cabinet d'expertise maritime spécialisé dans l'inspection des marchandises et des navires. Notre mission: garantir la sécurité et la qualité dans le domaine maritime.</p>
+                <a href="#services-home" class="btn">Découvrir nos services</a>
+            </div>
+        </div>
+        
+        <section id="services-home" class="services-home">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nos Expertises</h2>
+                    <p>Nous offrons des services d'expertise maritime complets et professionnels pour répondre à tous vos besoins.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Expertise sur Facultés</h3>
+                            <p>Inspection de l'état des marchandises avant chargement et avant, pendant et après déchargement. Nous vérifions le type, la quantité et l'état des marchandises.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Expertise sur Corps</h3>
+                            <p>Inspection de l'état physique général du navire, de ses équipements et installations. Expertise technique pour assurances, ventes et affrètements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Rapports Détaillés</h3>
+                            <p>Rédaction de rapports d'expertise détaillés et confidentiels agrémentés de photos, avec évaluation des dommages et responsabilités.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about-home">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Notre Mission</h3>
+                        <p>Tango International Services (T.I.S) est un cabinet d'expertise maritime spécialisé sur FACULTÉS (expertise sur toutes sortes de marchandises à charger et/ou déchargées des navires) et sur CORPS (inspection du navire et de ses équipements/installations).</p>
+                        <p>Nous fournissons à nos clients des rapports d'expertise journaliers et définitifs détaillant le type de marchandise, la quantité exacte, la nature et l'étendue des éventuels dommages, ainsi qu'une évaluation des préjudices et responsabilités.</p>
+                        <a href="#" class="btn nav-link" data-page="apropos">En savoir plus sur nous</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1564507004663-b6dfb3e2ede5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Navire de marchandises">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Page Services -->
+    <section id="services" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services</h2>
+                <p>Découvrez l'étendue de nos services d'expertise maritime professionnels.</p>
+            </div>
+            
+            <div class="service-detail">
+                <h3><i class="fas fa-boxes"></i> Expertise sur Facultés</h3>
+                <p>Notre mission d'expertise sur facultés comprend l'inspection approfondie des marchandises :</p>
+                <ul>
+                    <li>Inspection de l'état des marchandises avant chargement (type, quantité, état)</li>
+                    <li>Surveillance avant, pendant et après déchargement</li>
+                    <li>Évaluation précise du nombre exact de marchandises chargées ou déchargées</li>
+                    <li>Identification de la nature, étendue et causes des éventuels dommages/avaries</li>
+                    <li>Évaluation des préjudices subis par la marchandise</li>
+                    <li>Identification des responsabilités lorsque possible</li>
+                </ul>
+                <p>Au terme des opérations, nous fournissons à nos mandants un rapport d'expertise détaillé et confidentiel agrémenté de photos.</p>
+            </div>
+            
+            <div class="service-detail">
+                <h3><i class="fas fa-ship"></i> Expertise sur Corps (Expertise Technique)</h3>
+                <p>Notre mission d'expertise technique inclut :</p>
+                <ul>
+                    <li>Inspection de l'état physique général du navire (avant assurance, avant-vente, affrètement)</li>
+                    <li>Inspection du navire et de ses équipements suite à un incident/accident (coque, moteurs, équipements électroniques)</li>
+                    <li>Supervision des réparations pour vérifier leur conformité et exhaustivité</li>
+                    <li>Contrôle de la qualité des travaux effectués suite à un incident</li>
+                </ul>
+                <p>Nous rédigeons un rapport d'expertise détaillé et confidentiel que nous remettons à nos mandants.</p>
+            </div>
+            
+            <div class="service-detail">
+                <h3><i class="fas fa-clipboard-list"></i> Autres Services</h3>
+                <p>Notre champ d'action ne se limite pas seulement à l'expertise sur facultés et sur corps. Nous proposons également :</p>
+                <ul>
+                    <li>Conseil en logistique maritime</li>
+                    <li>Assistance technique pour les armateurs</li>
+                    <li>Expertise pour les compagnies d'assurance maritime</li>
+                    <li>Formation en sécurité et inspection maritime</li>
+                    <li>Audit de conformité réglementaire</li>
+                </ul>
+                <p>Pour plus d'informations sur nos offres de services, n'hésitez pas à nous contacter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page À Propos -->
+    <section id="apropos" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>À Propos de Nous</h2>
+                <p>Découvrez Tango International Services, votre partenaire en expertise maritime.</p>
+            </div>
+            
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3>Notre Mission</h3>
+                    <p>Fournir des services d'expertise maritime de haute qualité, précis et fiables pour garantir la sécurité des marchandises et des navires. Nous nous engageons à offrir à nos clients des rapports détaillés et confidentiels qui les aident à prendre des décisions éclairées et à protéger leurs intérêts dans le domaine maritime.</p>
+                </div>
+                
+                <div class="vision">
+                    <h3>Notre Vision</h3>
+                    <p>Devenir le cabinet d'expertise maritime de référence en offrant des services complets et innovants qui répondent aux besoins changeants de l'industrie maritime mondiale. Nous aspirons à contribuer à la sécurité, à l'efficacité et à la durabilité du transport maritime international.</p>
+                </div>
+            </div>
+            
+            <div class="section-title">
+                <h2>Notre Équipe</h2>
+                <p>Des experts maritimes qualifiés et expérimentés à votre service.</p>
+            </div>
+            
+            <div class="team">
+                <div class="container">
+                    <div class="team-member">
+                        <div class="member-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Directeur Général</h4>
+                        <p>Expert maritime avec plus de 20 ans d'expérience dans l'inspection et l'expertise de navires et de marchandises. Diplômé de l'École Nationale de la Marine Marchande.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-title">
+                <h2>Notre Engagement</h2>
+                <p>Nous nous engageons à fournir des services d'expertise de la plus haute qualité.</p>
+            </div>
+            
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3><i class="fas fa-check-circle"></i> Professionnalisme</h3>
+                    <p>Nos experts sont hautement qualifiés et suivent des formations continues pour rester à jour avec les dernières normes et réglementations maritimes internationales.</p>
+                </div>
+                
+                <div class="vision">
+                    <h3><i class="fas fa-shield-alt"></i> Confidentialité</h3>
+                    <p>Tous nos rapports d'expertise sont strictement confidentiels et ne sont communiqués qu'à nos mandants, garantissant ainsi la protection de leurs informations commerciales sensibles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Contact -->
+    <section id="contact" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-nous</h2>
+                <p>N'hésitez pas à nous contacter pour toute demande d'information ou de devis.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Coordonnées</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>Port Autonome, Zone Maritime<br>BP 01, Abidjan et San-pedro</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+225 07 14 73 51 27</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>tangointernationalservices@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horaires d'ouverture</h4>
+                            <p>Lundi - Vendredi: 8h00 - 18h00<br>Samedi: 9h00 - 12h00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Zone d'intervention</h4>
+                            <p>International - Nous intervenons dans tous les ports en cote d'ivoire.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <!-- Logo T.I.S version blanche -->
+                        <img src="Image/tis.jpeg">
+                    </div>
+                    <h3>Tango International Services</h3>
+                    <p>Cabinet d'expertise maritime spécialisé dans l'inspection des marchandises et des navires. Votre partenaire de confiance pour la sécurité maritime.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="accueil">Accueil</a></li>
+                        <li><a href="#" class="nav-link" data-page="services">Nos Services</a></li>
+                        <li><a href="#" class="nav-link" data-page="apropos">À Propos</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Nos Services</h3>
+                    <ul>
+                        <li><a href="#">Expertise sur Facultés</a></li>
+                        <li><a href="#">Expertise sur Corps</a></li>
+                        <li><a href="#">Rapports d'Expertise</a></li>
+                        <li><a href="#">Suivi des Réparations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Port Autonome, Abidjan</p>
+                    <p><i class="fas fa-phone"></i> +255 07 14 73 51 27</p>
+                    <p><i class="fas fa-envelope"></i> tangointernationalservices@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Tango International Services. Tous droits réservés. | Expertises Maritime-Shipping-Pêche Maritime Survey-Shipping-Fishing</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation entre les pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageContents = document.querySelectorAll('.page-content');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('nav ul');
+            
+            // Gestion de la navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const pageId = this.getAttribute('data-page');
+                    
+                    // Mettre à jour les liens actifs
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Afficher la page correspondante
+                    pageContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === pageId) {
+                            content.classList.add('active');
+                        }
+                    });
+                    
+                    // Fermer le menu mobile si ouvert
+                    navMenu.classList.remove('active');
+                    
+                    // Scroll vers le haut de la page
+                    window.scrollTo(0, 0);
+                });
+            });
+            
+            // Menu mobile
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Fermer le menu mobile en cliquant à l'extérieur
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+            
+            // Gestion du formulaire de contact
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Récupération des données du formulaire
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    
+                    // Simulation d'envoi
+                    alert(`Merci ${name}! Votre message concernant "${subject}" a été envoyé. Nous vous répondrons à ${email} dans les plus brefs délais.`);
+                    
+                    // Réinitialisation du formulaire
+                    contactForm.reset();
+                });
+            }
+            
+            // Simulation de chargement des images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                
+                img.style.transition = 'opacity 0.5s ease';
+                img.style.opacity = '0';
+                
+                // Gestion des erreurs de chargement d'image
+                img.addEventListener('error', function() {
+                    console.error(`Erreur de chargement de l'image: ${this.src}`);
+                    // Si c'est le logo qui ne charge pas, on utilise un substitut
+                    if (this.id === 'tis-logo') {
+                        this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMTIwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiByeD0iNSIgZmlsbD0iIzFhNGI4YyIvPgo8dGV4dCB4PSI2MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkQuSS5TLjwvdGV4dD4KPC9zdmc+';
+                        this.alt = "Logo T.I.S - Tango International Services";
+                    }
+                });
+            });
+            
+            // Préchargement du logo
+            const logoImg = document.getElementById('tis-logo');
+            if (logoImg) {
+                // J'ai créé une version du logo basée sur la description de l'image fournie
+                logoImg.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMTIwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiByeD0iNSIgZmlsbD0iIzFhNGI4YyIvPgo8dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRhbmdvIEludGVybmF0aW9uYWwgU2VydmljZTwvdGV4dD4KPHRleHQgeD0iNjAiIHk9IjQwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VC5JLkM8L3RleHQ+Cjwvc3ZnPg==";
+            }
+        });
+    </script>
+</body>
+</html>
